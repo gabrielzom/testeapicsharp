@@ -5,7 +5,7 @@ const getClienteById = (id) => {
     <span class="visually-hidden">Loading...</span>
   </div>`;
 
-  const url = id > 0 ? `https://apismanagement.azure-api.net/Clientes/Listar/${id}` : `https://apismanagement.azure-api.net/Clientes/Listar/All`;
+  const url = id > 0 ? `https://apismanagement.azure-api.net/monitoriawebapi/Clientes/Listar/${id}` : `https://apismanagement.azure-api.net/monitoriawebapi/Clientes/Listar/All`;
     setTimeout(() => {
       axios.get(url)
         .then(response => {
@@ -55,7 +55,7 @@ function findCliente() {
 }
 
 const deleteClienteById = () => {
-  axios.delete(`https://apismanagement.azure-api.net/Clientes/Deletar/${id.value}`)
+  axios.delete(`https://apismanagement.azure-api.net/monitoriawebapi/Clientes/Deletar/${id.value}`)
   .then(response => {
     alert(response.data);
     getClienteById(0);
@@ -64,7 +64,7 @@ const deleteClienteById = () => {
 }
 
 const updateClienteById = () => {
-  axios.put(`https://apismanagement.azure-api.net/Clientes/Atualizar/${id.value}`, {
+  axios.put(`https://apismanagement.azure-api.net/monitoriawebapi/Clientes/Atualizar/${id.value}`, {
     nome : nome.value,
     cpf : cpf.value,
     nascimento : nascimento.value
@@ -78,7 +78,7 @@ const updateClienteById = () => {
 }
 
 const insertCliente = () => {
-  axios.post(`https://apismanagement.azure-api.net/Clientes/Incluir`, [
+  axios.post(`https://apismanagement.azure-api.net/monitoriawebapi/Clientes/Incluir`, [
     {
       nome : nome.value,
       cpf : cpf.value,
