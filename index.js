@@ -40,7 +40,7 @@ const getClienteById = (id) => {
             </table>`;
       })
       .catch(error => console.log(error))
-    }, 1500)
+    }, 0)
 }
 
 $(document).ready(getClienteById(0))
